@@ -9,6 +9,14 @@ test.describe("Auth flow", () => {
     await page.getByLabel("Password").fill("password");
     await page.getByRole("button", { name: /se connecter/i }).click();
 
+    /**
+    await page
+        .getByRole('button', { name: /se connecter/i })
+        .or(page.getByTestId('login'))
+        .or(page.locator('#login'))
+        .first().click();
+     */
+
     await expect(page).toHaveURL(/\/admin$/);
     await expect(page.getByRole("heading", { name: /zone admin protégée/i })).toBeVisible();
     await expect(page.getByText(/connecté en tant que admin/i)).toBeVisible();
