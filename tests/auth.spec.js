@@ -9,13 +9,8 @@ test.describe("Auth flow", () => {
     await page.getByLabel("Password").fill("password");
     await page.getByRole("button", { name: /se connecter/i }).click();
 
-    /**
-    await page
-        .getByRole('button', { name: /se connecter/i })
-        .or(page.getByTestId('login'))
-        .or(page.locator('#login'))
-        .first().click();
-     */
+    // VSCode Chat > Playwright Healer agent > Prompt
+    // Check if my tests are broken and fix them. Add multiple locator through playwright operator or() based on role, ids, data test etc and use idiomatic functions proper to playwright.
 
     await expect(page).toHaveURL(/\/admin$/);
     await expect(page.getByRole("heading", { name: /zone admin protégée/i })).toBeVisible();
