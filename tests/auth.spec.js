@@ -9,9 +9,10 @@ test.describe("Auth flow", () => {
     await page.getByLabel("Password").fill("password");
     await page.getByRole("button", { name: /se connecter/i }).click();
 
-    // Claude through terminal. Prompt
-    // Lance mes tests Playwright et corrige les en cas d'erreur.
-    // Profite en pour utiliser les fonctions de multi-locators de Playwright pour améliorer la robustesse de mes tests.
+    // Claude agent teams through terminal. Prompt
+    // Lance l'équipe
+    // > Change la page de connexion pour qu'elle ressemble au site https://paristestconf.com/ et change le mot de passe pour "ptc"
+    // > Produit moi rapport de qa sur les modifications apportés
 
     await expect(page).toHaveURL(/\/admin$/);
     await expect(page.getByRole("heading", { name: /zone admin protégée/i })).toBeVisible();

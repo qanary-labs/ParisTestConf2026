@@ -10,10 +10,7 @@ export default defineConfig({
   ],
   use: {
     baseURL: "http://127.0.0.1:3000",
-    headless: false,
-    launchOptions: {
-      slowMo: 1000,
-    },
+    headless: true,
     trace: "on",
     screenshot: "on",
     video: "on",
